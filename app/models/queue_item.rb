@@ -1,15 +1,17 @@
 class QueueItem < ActiveRecord::Base
-belongs_to :user
-belongs_to :video
+  belongs_to :user
+  belongs_to :video
 
-delegate :category, to: :video
+  delegate :category, to: :video
 
-# prefix can be different than object being delegated
-# ie # delegate :title, to: :video, prefix: :movie
-# delegate :title, to: :video, prefix: :video # from soluton
-# alternate syntax
-# prefixes the name of the object being delegated to
-delegate :title, to: :video, prefix: true
+  # prefix can be different than object being delegated
+  # ie # delegate :title, to: :video, prefix: :movie
+  # delegate :title, to: :video, prefix: :video # from soluton
+  # alternate syntax
+  # prefixes the name of the object being delegated to
+  delegate :title, to: :video, prefix: true
+
+  validates_numericality_of :position, { only_integer: true }
 
   def rating
     review = Review.where(user_id: user.id, video_id: video.id).first
