@@ -4,4 +4,8 @@ class User < ActiveRecord::Base
   has_secure_password validations: false
   has_many :queue_items, -> { order 'position' }
   has_many :reviews
+
+  def normalize_queue_item_positions
+    queue_items.each_with_index { |queue_item, index | queue_item.update_attributes(position: index+1) }
+  end
 end
