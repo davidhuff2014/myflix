@@ -19,7 +19,8 @@
     = bootstrap_form_for [@video, Review.new], layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-6' do |f|
       %fieldset
         .form-group
-          = f.select :rating, options_for_select([5, 4, 3, 2, 1].map { |number| [pluralize(number, 'Star')]}), label: 'Rate This Video', control_col: 'col-sm-2'
+          %label Rate this video
+          = f.select :rating, options_for_video_reviews, label: 'Rate This Video', control_col: 'col-sm-2'
           = f.text_area :content, rows: 6, control_col: 'col-sm-7', label: 'Write Review'
         %fieldset.actions.control-group.col-sm-offset-2
           = f.submit
