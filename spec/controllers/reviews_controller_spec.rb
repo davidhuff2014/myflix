@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe ReviewsController do
   describe 'POST create' do
+
     let(:video) { Fabricate(:video) }
 
     context 'with authenticated users' do
@@ -10,9 +11,9 @@ describe ReviewsController do
       before { session[:user_id] = current_user.id }
 
       context 'with valid inputs' do
-        before do
-          post :create, review: Fabricate.attributes_for(:review), video_id: video.id
-        end
+
+        before { post :create, review: Fabricate.attributes_for(:review), video_id: video.id }
+
         it 'redirects to video show page' do
           expect(response).to redirect_to video
         end
