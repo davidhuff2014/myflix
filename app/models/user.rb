@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   def normalize_queue_item_positions
     queue_items.each_with_index { |queue_item, index | queue_item.update_attributes(position: index+1) }
   end
+
+  def queued_video?(video)
+    queue_items.map(&:video).include?(video)
+  end
 end

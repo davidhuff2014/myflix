@@ -16,6 +16,7 @@ describe SessionsController do
 
   describe 'POST create' do
     context 'with valid credentials' do
+
       before do
         @alice = Fabricate(:user)
         post :create, email: @alice.email, password: @alice.password
@@ -35,6 +36,7 @@ describe SessionsController do
     end
 
     context 'with invalid credentials' do
+
       before do
         alice = Fabricate(:user)
         post :create, email: alice.email, password: alice.password + 'asdfasdf'
@@ -55,10 +57,12 @@ describe SessionsController do
   end
 
   describe 'GET destroy' do
+
     before do
       session[:user_id] = Fabricate(:user).id
       get :destroy
     end
+
     it 'clears the session for the user' do
       expect(session[:user_id]).to be_nil
     end
