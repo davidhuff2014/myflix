@@ -13,11 +13,11 @@ describe '#queued_video?' do
     user = Fabricate(:user)
     video = Fabricate(:video)
     Fabricate(:queue_item, user: user, video: video)
-    user.queued_video?(video).should be_true
+    user.queued_video?(video).should be true
   end
   it 'returns false when the user has not queued the video' do
     user = Fabricate(:user)
     video = Fabricate(:video)
-    user.queued_video?(video).should be_false
+    user.queued_video?(video).should be false
   end
 end
