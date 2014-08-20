@@ -138,7 +138,7 @@ describe QueueItemsController do
       end
       it 'normalizes the position numbers' do
         post :update_queue, queue_items: [{ id: queue_item1.id, position: 3 }, {id: queue_item2.id, position: 2 }]
-        expect(alice.queue_items.map(&:position)).to eq([ 1, 2 ] )
+        expect(alice.queue_items.pluck(:position)).to eq([ 1, 2 ] )
       end
     end
 
