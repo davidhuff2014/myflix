@@ -11,6 +11,7 @@ Myflix::Application.routes.draw do
   end
 
   resources :users, only: [:show]
+  get 'people', to: 'relationships#index'
 
   resources :categories, only: [:show]
 
