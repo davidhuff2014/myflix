@@ -25,6 +25,6 @@ Myflix::Application.configure do
       domain:               'computer-critters.com',
       user_name:            ENV['SMTP_EMAIL'],
       password:             ENV['SMTP_PASSWORD'],
-      authentication:       'plain',
+      authentication:       'login',
       enable_starttls_auto: true  }
 end
