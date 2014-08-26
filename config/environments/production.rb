@@ -18,6 +18,7 @@ Myflix::Application.configure do
 
   config.active_support.deprecation = :notify
 
+  config.action_mailer.default_url_options = { host: 'http://mysterious-lowlands-6704.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       address:              'smtp.computer-critters.com',

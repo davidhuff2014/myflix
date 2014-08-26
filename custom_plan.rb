@@ -8,7 +8,7 @@ class CustomPlan < Zeus::Rails
 
   # implementented to get zeus to random seed rspec
   def test
-    RSpec.configuration.seed = rand 1..10_000 if defined? RSpec
+    RSpec.configuration.seed = rand 1..100_000 if defined? RSpec
     super
   end
 end

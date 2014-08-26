@@ -7,20 +7,26 @@ describe User do
   it { should validate_uniqueness_of(:email) }
   it { should have_many(:queue_items), -> { order 'position' } }
   it { should have_many(:reviews), -> { order 'created_at DESC' } }
-end
 
-describe '#queued_video?' do
-  it 'returns true when the user queued the video' do
-    user = Fabricate(:user)
-    video = Fabricate(:video)
-    Fabricate(:queue_item, user: user, video: video)
-    user.queued_video?(video).should be true
+  it 'generates a random token when the user is created' do
+    alice = Fabricate(:user)
+    expect(alice.token).to be_present
   end
 
-  it 'returns false when the user has not queued the video' do
-    user = Fabricate(:user)
-    video = Fabricate(:video)
-    user.queued_video?(video).should be false
+
+  describe '#queued_video?' do
+    it 'returns true when the user queued the video' do
+      user = Fabricate(:user)
+      video = Fabricate(:video)
+      Fabricate(:queue_item, user: user, video: video)
+      user.queued_video?(video).should be true
+    end
+
+    it 'returns false when the user has not queued the video' do
+      user = Fabricate(:user)
+      video = Fabricate(:video)
+      user.queued_video?(video).should be false
+    end
   end
 
   describe '#follows?' do
