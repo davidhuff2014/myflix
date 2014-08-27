@@ -12,7 +12,7 @@ class Video < ActiveRecord::Base
       when :sqlite
         where('title LIKE ?', "%#{search_term}%").order('created_at DESC')
       when :postgresql
-        where('title iLIKE ?', "%#{search_term}%").order('created_at DESC')
+        where('title ILIKE ?', "%#{search_term}%").order('created_at DESC')
       else
         raise NotImplementedError, "Unknown adapter type '#{adapter_type}'"
     end
