@@ -1,0 +1,10 @@
+%section.reset_password.container
+  .row
+    .col-sm-6.col-sm-offset-1
+      = bootstrap_form_tag url: password_resets_path do |f|
+        %header
+          %h1 Reset Your Password
+        %fieldset.form-group
+          = f.password_field :password, label: 'New Password', help: 'Must be at least 6 characters long'
+          = hidden_field_tag :token, @token # will not work with bootstrap_form_tag convention
+          = f.submit value: 'New Password', class: 'btn btn-default'
