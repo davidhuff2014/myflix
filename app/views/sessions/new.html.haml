@@ -8,4 +8,5 @@
           = f.email_field  :email, placeholder: 'name@example.com'
           = f.password_field :password
         %fieldset.actions.control-group.col-sm-offset-2
-          = f.submit value: 'Sign In'
+          = f.submit value: 'Sign In', class: 'btn btn-default'
+          = link_to 'Forgot Password', forgot_password_path

@@ -12,6 +12,7 @@ gem 'bootstrap_form'
 gem 'bcrypt', '~> 3.1.7'
 gem 'fabrication'
 gem 'faker'
+gem 'figaro'
 
 group :development do
   gem 'sqlite3'
@@ -20,6 +21,7 @@ group :development do
   gem 'thin'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'letter_opener'
 end
 
 group :development, :test do
