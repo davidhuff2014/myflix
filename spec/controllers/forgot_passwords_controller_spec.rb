@@ -37,7 +37,7 @@ describe ForgotPasswordsController do
 
       it 'shows an error message' do
         post :create, email: 'foo@example.com'
-        expect(flash[:danger]).to eq('There is no user with that email in the system.')
+        expect(flash[:danger]).to eq('If your email address is in our system, you will receive an email with instructions.')
       end
     end
   end

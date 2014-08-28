@@ -4,6 +4,7 @@ feature 'user signs in' do
   scenario 'with valid email and password' do
     alice = Fabricate(:user)
     sign_in(alice)
-    page.should have_content alice.full_name
+    expect(page).to have_content alice.full_name
+    # page.should have_content alice.full_name
   end
 end
