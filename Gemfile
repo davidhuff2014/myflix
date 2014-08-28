@@ -26,6 +26,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '2.99'
+  gem 'zeus'
 end
 
 group :test do
