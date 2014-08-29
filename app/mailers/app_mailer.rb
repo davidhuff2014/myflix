@@ -10,7 +10,6 @@ class AppMailer < ActionMailer::Base
   end
 
   def send_invitation_email(invitation)
-    # todo: hw5-2 (1) @16:35 problem with inviter
     @invitation = invitation
     mail to: invitation.recipient_email, from: 'David.Huff@computer-critters.com', subject: 'Invitation to join Myflix'
   end
