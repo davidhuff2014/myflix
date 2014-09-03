@@ -7,4 +7,4 @@
         %fieldset.form-group
           = f.password_field :password, label: 'New Password', help: 'Must be at least 6 characters long'
           = hidden_field_tag :token, @token # will not work with bootstrap_form_tag convention
-          = f.submit value: 'New Password', class: 'btn btn-default'
+          = f.submit value: 'Reset Password', class: 'btn btn-default'
