@@ -7,7 +7,11 @@ Myflix::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
+
+  # Local system configuration
   config.action_mailer.delivery_method = :letter_opener
+
+  # must be turned on in either case
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   # Leave off for testing

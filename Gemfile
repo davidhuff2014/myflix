@@ -13,6 +13,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'fabrication'
 gem 'faker'
 gem 'figaro'
+gem 'redis'
+gem 'sidekiq'
 
 group :development do
   gem 'sqlite3'
