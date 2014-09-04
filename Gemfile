@@ -15,14 +15,15 @@ gem 'faker'
 gem 'figaro'
 gem 'redis'
 gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', :require => nil
 
 group :development do
   gem 'sqlite3'
   gem 'pry'
   gem 'pry-nav'
   gem 'thin'
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'letter_opener'
 end
 

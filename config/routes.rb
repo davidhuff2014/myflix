@@ -1,4 +1,6 @@
 Myflix::Application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
   root to: 'pages#front'
 
   get 'home', to: 'videos#index'
