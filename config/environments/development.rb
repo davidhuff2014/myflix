@@ -10,7 +10,7 @@ Myflix::Application.configure do
 
 
   # must be turned on in either case
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost:5000' }
 
   # Local system configuration
   config.action_mailer.delivery_method = :letter_opener

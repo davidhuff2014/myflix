@@ -30,15 +30,4 @@ Myflix::Application.configure do
   }
   ActionMailer::Base.delivery_method = :smtp
 
-
-
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #     address:              'smtp.computer-critters.com',
-  #     port:                 587,
-  #     domain:               'computer-critters.com',
-  #     user_name:            ENV['SMTP_EMAIL'],
-  #     password:             ENV['SMTP_PASSWORD'],
-  #     authentication:       'login',
-  #     enable_starttls_auto: true  }
 end
