@@ -43,12 +43,8 @@ group :test do
   gem 'capybara-email'
 end
 
-group :production do
+group :production, :staging do
   gem 'pg'
   gem 'rails_12factor'
 end
 
-group :staging do
-  gem 'pg'
-  gem 'rails_12factor'
-end
