@@ -26,7 +26,6 @@ group :development do
   gem 'thin'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'letter_opener'
 end
 
 group :development, :test do
@@ -41,6 +40,10 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'capybara-email'
+end
+
+group :development, :staging do
+  gem 'letter_opener'
 end
 
 group :production, :staging do
