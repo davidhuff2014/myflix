@@ -13,7 +13,7 @@ namespace :deploy do
     deployment = Paratrooper::Deploy.new("mysterious-lowlands-6704") do |deploy|
       deploy.tag              = 'production',
           deploy.match_tag        = 'staging',
-          deploy.maintenance_mode = !ENV['NO_MAINTENANCE']
+          # deploy.maintenance_mode = !ENV['NO_MAINTENANCE']
     end
 
     deployment.deploy
