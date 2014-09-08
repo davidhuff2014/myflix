@@ -20,18 +20,15 @@ Myflix::Application.configure do
 
   config.action_mailer.default_url_options = { host: 'http://mysterious-lowlands-6704-stage.herokuapp.com' }
 
-  config.action_mailer.delivery_method = :letter_opener
-
-  # config.action_mailer.smtp_settings = {
-  #     address:              'smtp.computer-critters.com',
-  #     port:                 587,
-  #     domain:               'computer-critters.com',
-  #     user_name:            ENV['SMTP_EMAIL'],
-  #     password:             ENV['SMTP_PASSWORD'],
-  #     authentication:       'login',
-  #     enable_starttls_auto: true
-  # }
-  # config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+      :port           => ENV['MAILGUN_SMTP_PORT'],
+      :address        => ENV['MAILGUN_SMTP_SERVER'],
+      :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+      :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+      :domain         => 'mysterious-lowlands-6704.herokuapp.com',
+      :authentication => :plain,
+  }
+  ActionMailer::Base.delivery_method = :smtp
 
   config.action_dispatch.show_exceptions = false
 end
