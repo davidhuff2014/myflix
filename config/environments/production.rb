@@ -29,6 +29,6 @@ Myflix::Application.configure do
       :authentication => :plain,
   }
   # ActionMailer::Base.delivery_method = :smtp
-
+  config.action_mailer.delivery_method = :letter_opener
   config.action_dispatch.show_exceptions = false
 end
