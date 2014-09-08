@@ -28,7 +28,7 @@ Myflix::Application.configure do
       :domain         => 'mysterious-lowlands-6704.herokuapp.com',
       :authentication => :plain,
   }
-  ActionMailer::Base.delivery_method = :smtp
+  # ActionMailer::Base.delivery_method = :smtp
 
   config.action_dispatch.show_exceptions = false
 end
