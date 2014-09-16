@@ -12,7 +12,6 @@ class Admin::VideosController < ApplicationController
       flash[:success] = "You have successfully added the video '#{ @video.title }'."
       redirect_to new_admin_video_path
     else
-      #TODO resume with HW6-2 #(2)
       flash[:danger] = "The video has failed to be added. Please check the errors."
       render :new
     end
@@ -28,6 +27,6 @@ class Admin::VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:title, :description, :category_id)
+    params.require(:video).permit(:title, :description, :category_id, :large_cover, :small_cover, :video_url)
   end
 end
