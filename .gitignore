@@ -24,4 +24,4 @@ save_and_open_page
 /config/application.yml
 
 # Ignore dump file
-# /dump.rdb
+/dump.rdb
