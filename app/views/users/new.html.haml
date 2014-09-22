@@ -11,4 +11,4 @@
           /* f.hidden_field cannot be used because invitation_token is not part of user */
           = hidden_field_tag :invitation_token, @invitation_token
         %fieldset.actions.control-group.col-sm-offset-2
-          = f.submit value: 'Sign Up', class: 'btn btn-default'
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key=#{ ENV['STRIPE_PUBLISHABLE_KEY'] } data-name="Myflix Sign Up Charge" data-description="$9.99 to sign up for best video service" data-amount="999"> </script>
