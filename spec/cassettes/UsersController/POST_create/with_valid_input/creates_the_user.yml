@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=Sign%20up%20charge%20for%20sharon.zulauf%40wiza.biz
+      string: amount=999&currency=usd&description=Sign%20up%20charge%20for%20aiden_armstrong%40hicklestanton.net
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -22,7 +22,7 @@ http_interactions:
         joshua 3.2.0-68-generic #102-Ubuntu SMP Tue Aug 12 22:02:15 UTC 2014 x86_64
         x86_64 x86_64 GNU/Linux"}'
       Content-Length:
-      - '87'
+      - '98'
   response:
     status:
       code: 400
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 23 Sep 2014 22:08:44 GMT
+      - Tue, 23 Sep 2014 23:39:48 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -58,5 +58,5 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Tue, 23 Sep 2014 22:08:44 GMT
+  recorded_at: Tue, 23 Sep 2014 23:39:48 GMT
 recorded_with: VCR 2.9.3
