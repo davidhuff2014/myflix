@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       if charge.successful?
         @user.save
         handle_invitaion
+        flash[:success] = "Thank you for registering with MyFlix, please sign in now."
         AppMailer.send_welcome_email(@user).deliver
         redirect_to sign_in_path
       else
