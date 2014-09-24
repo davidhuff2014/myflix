@@ -11,11 +11,10 @@ describe UsersController do
   describe 'POST create' do
     context 'with valid input' do
 
-      # before { post :create, user: Fabricate.attributes_for(:user) }
-# TODO HW7-2 (1) 3:21 only works when the user post :create is in the same block not in the before but watch to see what he does in the video maybe I can have two before blocks!! -may want to ignore the warning for this statement also
+      before { StripeWrapper::Charge.stub(:create) }
+      before { post :create, user: Fabricate.attributes_for(:user) }
+
       it 'creates the user', :vcr do
-        StripeWrapper::Charge.stub(:create)
-        post :create, user: Fabricate.attributes_for(:user)
         expect(User.count).to eq(1)
       end
 
@@ -66,6 +65,7 @@ describe UsersController do
 
     context 'sending emails' do
 
+      before { StripeWrapper::Charge.stub(:create) }
       before { ActionMailer::Base.deliveries.clear }
 
       it 'sends out the email to the user with valid input' do
