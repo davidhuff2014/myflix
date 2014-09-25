@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&card=tok_14gRyPLJUrOSUSj6EP9dZ4Ae&description=Sign%20up%20charge%20for%20john%40example.com
+      string: amount=999&currency=usd&card=tok_14gRxkLJUrOSUSj6ZCokSkMh&description=Sign%20up%20charge%20for%20john%40example.com
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 25 Sep 2014 02:27:14 GMT
+      - Thu, 25 Sep 2014 02:26:34 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -52,16 +52,16 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_14gRyQLJUrOSUSj6tcNTPVtD",
+          "id": "ch_14gRxmLJUrOSUSj6g30ttWrh",
           "object": "charge",
-          "created": 1411612034,
+          "created": 1411611994,
           "livemode": false,
           "paid": true,
           "amount": 999,
           "currency": "usd",
           "refunded": false,
           "card": {
-            "id": "card_14gRyPLJUrOSUSj6hkSGgJ60",
+            "id": "card_14gRxkLJUrOSUSj6IsT9QZlq",
             "object": "card",
             "last4": "4242",
             "brand": "Visa",
@@ -87,10 +87,10 @@ http_interactions:
             "object": "list",
             "total_count": 0,
             "has_more": false,
-            "url": "/v1/charges/ch_14gRyQLJUrOSUSj6tcNTPVtD/refunds",
+            "url": "/v1/charges/ch_14gRxmLJUrOSUSj6g30ttWrh/refunds",
             "data": []
           },
-          "balance_transaction": "txn_14gRyQLJUrOSUSj6E3Kb3JsB",
+          "balance_transaction": "txn_14gRxmLJUrOSUSj6VRsKYTu5",
           "failure_message": null,
           "failure_code": null,
           "amount_refunded": 0,
@@ -104,5 +104,5 @@ http_interactions:
           "receipt_number": null
         }
     http_version: 
-  recorded_at: Thu, 25 Sep 2014 02:27:14 GMT
+  recorded_at: Thu, 25 Sep 2014 02:26:34 GMT
 recorded_with: VCR 2.9.3
