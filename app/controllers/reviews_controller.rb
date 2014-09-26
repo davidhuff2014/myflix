@@ -13,6 +13,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def rating
+    reviews.average(:rating).round(1) if reviews.average(:rating)
+  end
+
   private
 
   def review_params
