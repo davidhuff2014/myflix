@@ -20,7 +20,6 @@ describe UsersController do
     end
 
     context 'failed user sign up' do
-# TODO HW7-5 Tests not running watch video for solution
       it 'renders the new template' do
         charge = double(:charge, successful?: false, error_message: 'Your card was declined.')
         StripeWrapper::Charge.should_receive(:create).and_return(charge)
@@ -32,7 +31,7 @@ describe UsersController do
         charge = double(:charge, successful?: false, error_message: 'Your card was declined.')
         StripeWrapper::Charge.should_receive(:create).and_return(charge)
         post :create, user: Fabricate.attributes_for(:user), stripeToken: '123'
-        expect(flash[:danger]).to be_present
+        expect(flash[:danger]).to eq('Your card was declined.')
       end
     end
   end
