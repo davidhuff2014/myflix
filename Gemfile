@@ -41,11 +41,15 @@ group :development, :test do
 end
 
 group :test do
-  gem 'database_cleaner', '1.2.0'
+  # gem 'database_cleaner', '1.2.0' (from gotealeaf template, buggy)
   gem 'shoulda-matchers', require: false
   gem 'capybara'
   gem 'launchy'
   gem 'capybara-email'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 group :production, :staging do
