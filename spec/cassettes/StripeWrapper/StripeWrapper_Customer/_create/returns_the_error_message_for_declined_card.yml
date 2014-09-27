@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/tokens
     body:
       encoding: US-ASCII
-      string: card[number]=4242424242424242&card[exp_month]=9&card[exp_year]=2018&card[cvc]=314
+      string: card[number]=4000000000000002&card[exp_month]=9&card[exp_year]=2018&card[cvc]=314
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 27 Sep 2014 20:54:11 GMT
+      - Sat, 27 Sep 2014 20:54:19 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -52,21 +52,21 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_14hSClLJUrOSUSj6mB2MFIx5",
+          "id": "tok_14hSCtLJUrOSUSj6KqORTg5m",
           "livemode": false,
-          "created": 1411851251,
+          "created": 1411851259,
           "used": false,
           "object": "token",
           "type": "card",
           "card": {
-            "id": "card_14hSClLJUrOSUSj6HKQykIMy",
+            "id": "card_14hSCtLJUrOSUSj6Q8Yqefgt",
             "object": "card",
-            "last4": "4242",
+            "last4": "0002",
             "brand": "Visa",
             "funding": "credit",
             "exp_month": 9,
             "exp_year": 2018,
-            "fingerprint": "w5v5eMmpgfUvy4fe",
+            "fingerprint": "4H2yy377Ugv4lJXH",
             "country": "US",
             "name": null,
             "address_line1": null,
@@ -79,13 +79,13 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Sat, 27 Sep 2014 20:54:11 GMT
+  recorded_at: Sat, 27 Sep 2014 20:54:19 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/charges
+    uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&card=tok_14hSClLJUrOSUSj6mB2MFIx5&description=a%20valid%20charge
+      string: card=tok_14hSCtLJUrOSUSj6KqORTg5m&email=jaydon.king%40hauck.name&plan=base
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -102,20 +102,20 @@ http_interactions:
         joshua 3.2.0-69-generic #103-Ubuntu SMP Tue Sep 2 05:02:14 UTC 2014 x86_64
         x86_64 x86_64 GNU/Linux"}'
       Content-Length:
-      - '88'
+      - '74'
   response:
     status:
-      code: 200
-      message: OK
+      code: 402
+      message: Payment Required
     headers:
       Server:
       - nginx
       Date:
-      - Sat, 27 Sep 2014 20:54:12 GMT
+      - Sat, 27 Sep 2014 20:54:20 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
-      - '1236'
+      - '117'
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Methods:
@@ -132,57 +132,12 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_14hSCmLJUrOSUSj66Sq07edG",
-          "object": "charge",
-          "created": 1411851252,
-          "livemode": false,
-          "paid": true,
-          "amount": 999,
-          "currency": "usd",
-          "refunded": false,
-          "card": {
-            "id": "card_14hSClLJUrOSUSj6HKQykIMy",
-            "object": "card",
-            "last4": "4242",
-            "brand": "Visa",
-            "funding": "credit",
-            "exp_month": 9,
-            "exp_year": 2018,
-            "fingerprint": "w5v5eMmpgfUvy4fe",
-            "country": "US",
-            "name": null,
-            "address_line1": null,
-            "address_line2": null,
-            "address_city": null,
-            "address_state": null,
-            "address_zip": null,
-            "address_country": null,
-            "cvc_check": "pass",
-            "address_line1_check": null,
-            "address_zip_check": null,
-            "customer": null
-          },
-          "captured": true,
-          "refunds": {
-            "object": "list",
-            "total_count": 0,
-            "has_more": false,
-            "url": "/v1/charges/ch_14hSCmLJUrOSUSj66Sq07edG/refunds",
-            "data": []
-          },
-          "balance_transaction": "txn_14hSCmLJUrOSUSj6207lXuFO",
-          "failure_message": null,
-          "failure_code": null,
-          "amount_refunded": 0,
-          "customer": null,
-          "invoice": null,
-          "description": "a valid charge",
-          "dispute": null,
-          "metadata": {},
-          "statement_description": null,
-          "receipt_email": null,
-          "receipt_number": null
+          "error": {
+            "message": "Your card was declined.",
+            "type": "card_error",
+            "code": "card_declined"
+          }
         }
     http_version: 
-  recorded_at: Sat, 27 Sep 2014 20:54:12 GMT
+  recorded_at: Sat, 27 Sep 2014 20:54:20 GMT
 recorded_with: VCR 2.9.3

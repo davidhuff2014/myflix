@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 25 Sep 2014 02:27:18 GMT
+      - Sat, 27 Sep 2014 20:54:13 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -52,14 +52,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_14gRyULJUrOSUSj6hYZyBDZM",
+          "id": "tok_14hSCnLJUrOSUSj6RROZQsR4",
           "livemode": false,
-          "created": 1411612038,
+          "created": 1411851253,
           "used": false,
           "object": "token",
           "type": "card",
           "card": {
-            "id": "card_14gRyULJUrOSUSj6tzJGl03z",
+            "id": "card_14hSCnLJUrOSUSj6MP1xEg7j",
             "object": "card",
             "last4": "0002",
             "brand": "Visa",
@@ -79,13 +79,13 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Thu, 25 Sep 2014 02:27:18 GMT
+  recorded_at: Sat, 27 Sep 2014 20:54:13 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&card=tok_14gRyULJUrOSUSj6hYZyBDZM&description=an%20invalid%20charge
+      string: amount=999&currency=usd&card=tok_14hSCnLJUrOSUSj6RROZQsR4&description=an%20invalid%20charge
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -111,7 +111,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 25 Sep 2014 02:27:19 GMT
+      - Sat, 27 Sep 2014 20:54:13 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -136,9 +136,9 @@ http_interactions:
             "message": "Your card was declined.",
             "type": "card_error",
             "code": "card_declined",
-            "charge": "ch_14gRyVLJUrOSUSj6TPYg0bi6"
+            "charge": "ch_14hSCnLJUrOSUSj6Pz9icYRc"
           }
         }
     http_version: 
-  recorded_at: Thu, 25 Sep 2014 02:27:19 GMT
+  recorded_at: Sat, 27 Sep 2014 20:54:13 GMT
 recorded_with: VCR 2.9.3
