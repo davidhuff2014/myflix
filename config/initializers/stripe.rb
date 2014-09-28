@@ -5,3 +5,4 @@ StripeEvent.configure do |events|
     event.data.object #=> #<Stripe::Charge:0x3fcb34c115f8>
   end
 end
+# TODO HW8-2 (1) 9:22

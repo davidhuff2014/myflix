@@ -69,6 +69,6 @@ describe 'Create payment on successful charge' do
 
   it 'creates a payment with the webhook from stripe for charge succeeded', :vcr do
     post '/stripe_events', event_data
-    excpect(Payment.count).to eq(1)
+    expect(Payment.count).to eq(1)
   end
 end
