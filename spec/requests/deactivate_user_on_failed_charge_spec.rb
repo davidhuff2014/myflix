@@ -68,7 +68,6 @@ describe 'Deactivate user on failed charge' do
   it 'deactivates a user with the web hook data from stripe for a charge failed', :vcr do
     alice = Fabricate(:user, customer_token: 'cus_4ruZ5fC5Izs1bd')
     post '/stripe_events', event_data
-    expect(alice).not_to be_active
-    # TODO HW8-3 8:08
+    expect(alice.reload).not_to be_active
   end
 end

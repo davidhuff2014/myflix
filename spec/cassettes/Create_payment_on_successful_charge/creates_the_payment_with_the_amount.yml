@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.stripe.com/v1/events/evt_14iAqFLJUrOSUSj6TCNEkUAJ
+    uri: https://api.stripe.com/v1/events/evt_14hn4ULJUrOSUSj6JuMKNGhS
     body:
       encoding: US-ASCII
       string: ''
@@ -29,11 +29,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 30 Sep 2014 00:24:00 GMT
+      - Tue, 30 Sep 2014 00:24:40 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
-      - '1722'
+      - '1720'
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Methods:
@@ -50,29 +50,29 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "evt_14iAqFLJUrOSUSj6TCNEkUAJ",
-          "created": 1412022835,
+          "id": "evt_14hn4ULJUrOSUSj6JuMKNGhS",
+          "created": 1411931462,
           "livemode": false,
-          "type": "charge.failed",
+          "type": "charge.succeeded",
           "data": {
             "object": {
-              "id": "ch_14iAqFLJUrOSUSj6DCCgwwPV",
+              "id": "ch_14hn4ULJUrOSUSj62rfFNFsz",
               "object": "charge",
-              "created": 1412022835,
+              "created": 1411931462,
               "livemode": false,
-              "paid": false,
+              "paid": true,
               "amount": 999,
               "currency": "usd",
               "refunded": false,
               "card": {
-                "id": "card_14iAngLJUrOSUSj694wbE57Q",
+                "id": "card_14hn4SLJUrOSUSj6E0sX38n6",
                 "object": "card",
-                "last4": "0341",
+                "last4": "4242",
                 "brand": "Visa",
                 "funding": "credit",
                 "exp_month": 9,
-                "exp_year": 2018,
-                "fingerprint": "3HFeGIluAqd9wOmq",
+                "exp_year": 2016,
+                "fingerprint": "w5v5eMmpgfUvy4fe",
                 "country": "US",
                 "name": null,
                 "address_line1": null,
@@ -84,34 +84,34 @@ http_interactions:
                 "cvc_check": "pass",
                 "address_line1_check": null,
                 "address_zip_check": null,
-                "customer": "cus_4ruZ5fC5Izs1bd"
+                "customer": "cus_4rW6JKHoMok032"
               },
-              "captured": false,
+              "captured": true,
               "refunds": {
                 "object": "list",
                 "total_count": 0,
                 "has_more": false,
-                "url": "/v1/charges/ch_14iAqFLJUrOSUSj6DCCgwwPV/refunds",
+                "url": "/v1/charges/ch_14hn4ULJUrOSUSj62rfFNFsz/refunds",
                 "data": []
               },
-              "balance_transaction": null,
-              "failure_message": "Your card was declined.",
-              "failure_code": "card_declined",
+              "balance_transaction": "txn_14hn4ULJUrOSUSj6Oif2TZQU",
+              "failure_message": null,
+              "failure_code": null,
               "amount_refunded": 0,
-              "customer": "cus_4ruZ5fC5Izs1bd",
-              "invoice": null,
-              "description": "payment to fail",
+              "customer": "cus_4rW6JKHoMok032",
+              "invoice": "in_14hn4ULJUrOSUSj63Kh52N9t",
+              "description": null,
               "dispute": null,
               "metadata": {},
-              "statement_description": "payment to fail",
+              "statement_description": "Myflix",
               "receipt_email": null,
               "receipt_number": null
             }
           },
           "object": "event",
           "pending_webhooks": 0,
-          "request": "iar_4rufGdlzJmosGi"
+          "request": "iar_4rW6mN3z5fvoYq"
         }
     http_version: 
-  recorded_at: Tue, 30 Sep 2014 00:24:00 GMT
+  recorded_at: Tue, 30 Sep 2014 00:24:40 GMT
 recorded_with: VCR 2.9.3
