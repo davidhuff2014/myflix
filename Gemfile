@@ -23,6 +23,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'stripe'
+gem 'stripe_event'
 gem 'draper'
 
 group :development do
