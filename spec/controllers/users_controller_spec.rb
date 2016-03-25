@@ -13,7 +13,11 @@ describe UsersController do
 
       it 'redirects to the sign in page' do
         result = double(:sign_up_result, successful?: true)
-        UserSignup.any_instance.should_receive(:sign_up).and_return(result)
+        # add expectation to get rid of negative deprecation warning
+        # expect(UserSignup).any_instance.to receive(:sign_up).and_return(result)
+        # and again
+        expect_any_instance_of(UserSignup).to receive(:sign_up).and_return(result)
+        # UserSignup.any_instance.should_receive(:sign_up).and_return(result)
         post :create, user: Fabricate.attributes_for(:user)
         expect(response).to redirect_to sign_in_path
       end
@@ -22,14 +26,18 @@ describe UsersController do
     context 'failed user sign up' do
       it 'renders the new template' do
         customer = double(:customer, successful?: false, error_message: 'Your card was declined.')
-        StripeWrapper::Customer.should_receive(:create).and_return(customer)
+        # add expectation to get rid of negative deprecation warning
+        expect(StripeWrapper::Customer).to receive(:create).and_return(customer)
+        # StripeWrapper::Customer.should_receive(:create).and_return(customer)
         post :create, user: Fabricate.attributes_for(:user), stripeToken: '123'
         expect(response).to render_template :new
       end
 
       it 'sets the flash error message' do
         customer = double(:charge, successful?: false, error_message: 'Your card was declined.')
-        StripeWrapper::Customer.should_receive(:create).and_return(customer)
+        # add expectation to get rid of negative deprecation warning
+        expect(StripeWrapper::Customer).to receive(:create).and_return(customer)
+        # StripeWrapper::Customer.should_receive(:create).and_return(customer)
         post :create, user: Fabricate.attributes_for(:user), stripeToken: '123'
         expect(flash[:danger]).to eq('Your card was declined.')
       end

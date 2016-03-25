@@ -38,6 +38,8 @@ feature 'User invites friend' do
   end
 
   def friend_signs_in
+    # added following line years after written because I was getting timing issues and it wasn't filling in
+    expect(page).to have_content("Thank you for registering with MyFlix, please sign in now.")
     fill_in 'Email', with: 'john@example.com'
     fill_in 'Password', with: 'password'
     click_button 'Sign In'
