@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :email, :password, :full_name
   #                               ### added to make login email case insensitive
-  validates_uniqueness_of :email, :case_sensitive => false
+  validates_uniqueness_of :email, case_sensitive: false
   has_secure_password validations: false
   has_many :queue_items, -> { order 'position' }
   has_many :reviews, -> { order 'created_at DESC' }
