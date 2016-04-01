@@ -5,7 +5,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:email])
+    # using scope in user.rb for ci_find needed to be case insensitive
+    # user = User.find_by(email: params[:email])
+    user = User.ci_find(:email, params[:email])
+
     if user && user.authenticate(params[:password])
       if user.active?
         session[:user_id] = user.id
