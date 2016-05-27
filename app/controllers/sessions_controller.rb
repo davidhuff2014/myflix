@@ -9,18 +9,23 @@ class SessionsController < ApplicationController
     # user = User.find_by(email: params[:email])
     user = User.ci_find(:email, params[:email])
 
-    if user && user.authenticate(params[:password])
-      if user.active?
-        session[:user_id] = user.id
-        redirect_to home_path
-        flash[:success] = 'You are signed in, enjoy!'
+    if User.count > 0
+      if user && user.authenticate(params[:password])
+        if user.active?
+          session[:user_id] = user.id
+          redirect_to home_path
+          flash[:success] = 'You are signed in, enjoy!'
+        else
+          flash[:danger] = 'Your account has been suspended, please contact customer service.'
+          redirect_to sign_in_path
+        end
       else
-        flash[:danger] = 'Your account has been suspended, please contact customer service.'
+        flash[:danger] = 'Invalid email or password.'
         redirect_to sign_in_path
       end
     else
-      flash[:danger] = 'Invalid email or password.'
-      redirect_to sign_in_path
+      flash[:danger] = "You must add at least one user before attempting to log in!"
+      redirect_to register_path
     end
   end
 
